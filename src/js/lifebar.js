@@ -1,19 +1,19 @@
 export default function lifeBar(value) {
   if (!value || !value.health) {
-    return 'Передано некорректное значение';
+    throw new Error('Передано некорректное значение');
   }
 
   if (value.health > 50) {
-    return 'healthy';
+    throw new Error('healthy');
   }
 
   if (value.health <= 50 && value.health > 15) {
-    return 'wounded';
+    throw new Error ('wounded');
   }
 
   if (value.health <= 15) {
-    return 'critical';
+    throw new Error ('critical');
   }
 
-  return 'Значение health некорректное';
+  throw new Error ('Значение health некорректное');
 }
